@@ -1,0 +1,10 @@
+{% if player_name != "" %}
+<h2>{{ player_name }}</h2>
+<img src='{{ player_ranked_img }}' alt="ranked icon" height="200", width="250">
+<h3>rank:{{ player_ranked }} {{ player_ranked_div }}</h3>
+<h3>level: {{ player_level }}</h3>
+<h3>Games played: {{ games_played }}</h3>
+<h3>Total_kills: {{ player_kills }}</h3>
+<h3>KD: {{ player_kd }}</h3>
+{% endif %}
+<footer>

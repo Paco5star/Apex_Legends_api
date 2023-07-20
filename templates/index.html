@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex legends player stats</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Add your CSS styles here -->
+    <style>
+        body {
+            /* Background gradient */
+            background: linear-gradient(to bottom, #F2EAD3, #F5F5F5);
+            /* Add glossy overlay effect */
+            background: linear-gradient(to bottom, rgba(242, 234, 211, 0.9), rgba(245, 245, 245, 0.9)), url(your-background-image.jpg);
+            background-blend-mode: overlay;
+            /* Set text color and font-family */
+            color: #3F2305;
+            font-family: Arial, sans-serif;
+            /* Center content vertically and horizontally */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            /* Add some padding */
+            padding: 20px;
+        }
+
+        header {
+            /* Add styling for header */
+            background-color: #DFD7BF;
+            padding: 10px;
+        }
+
+        /* Add styling for the form */
+        form {
+            margin-top: 20px;
+        }
+
+        /* Add styling for the form input field */
+        input[type="text"] {
+            background-color: #F2EAD3;
+            border: 1px solid #3F2305;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Add styling for the form submit button */
+        input[type="submit"] {
+            background-color: #3F2305;
+            color: #F5F5F5;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Add styling for player stats section */
+        h2, h3 {
+            margin-top: 20px;
+        }
+
+        img {
+            /* Add styling for the ranked icon image */
+            margin-top: 10px;
+        }
+
+        footer {
+            /* Add styling for footer */
+            margin-top: 50px;
+            text-align: center;
+            color: #DFD7BF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="row justify-content-center">
+            <!-- Add your header content here -->
+            <h1>Apex legends Player stats</h1>
+        </header>
+        <div class="row justify-content-center">
+            <h2>Enter Player name</h2>
+        </div>
+        <div class="row justify-content-center">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    {{ form.playerName.label }}
+                </div>
+                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                    {{ form.playerName() }}
+                </div>
+                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                    {{ form.submit() }}
+                </div>
+            </form>
+        </div>
+        <div >
+            {% if player_name %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <h2>{{ player_name }}</h2>
+                <img src='{{ player_ranked_img }}' alt="ranked icon" height="100" width="110">
+                <h3>rank: {{ player_rank }} {{ player_ranked_div }}</h3>
+                <h3>level: {{ player_level }}</h3>
+                <h3>Games played: {{ games_played }}</h3>
+                <h3>Total_kills: {{ player_kills }}</h3>
+                <h3>KD: {{ player_kd }}</h3>
+            </div>
+            {% endif %}
+        </div>
+        <footer >
+            <!-- Add your footer content here -->
+            <p>&copy; 2023 My Web Page. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Add Bootstrap JavaScript (optional, only required for certain components) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
