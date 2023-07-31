@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired
 app = Flask(__name__)
 
 
-API_KEY = "aaa0958e995c1287acf3513bcd4feb1a"
+API_KEY = 
 URL_STATS = "https://api.mozambiquehe.re/bridge"
 URL_MATCH_HISTORY = "https://api.mozambiquehe.re/games"
 app.config["SECRET_KEY"] = 'HELLOTEAM'
